@@ -129,6 +129,7 @@
   color: $color-white;
   @include media(sp) {
     padding-top: .92rem;
+    height: 4.02rem;
   }
   .c-visual-heading__en {
     display: block;
@@ -139,6 +140,9 @@
     font-size: 29px;
     letter-spacing: .2em;
     text-indent: .2em;
+    @include media(sp) {
+      font-size: .28rem;
+    }
   }
   .c-visual-heading__jp {
     display: block;
