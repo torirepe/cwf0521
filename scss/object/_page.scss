@@ -181,6 +181,10 @@
     overflow: hidden;
     padding-bottom: 78px;
     background: url(images/index/concept_bg.png) no-repeat center center;
+    @include media(sp) {
+      background-size: auto 80%;
+      background-position: left 32% bottom 96vw;
+    }
     @include media(pc) {
       background-attachment: fixed;
     }
