@@ -241,14 +241,14 @@
       #menu {
         div {
           &:nth-child(1) {
-            transform: translate(12%, 0) rotate(45deg);
+            transform: translate(12%, 24%) rotate(45deg);
           }
           &:nth-child(2) {
             opacity: 0;
             //transform: translate(100%, 0);
           }
           &:nth-child(3) {
-            transform: translate(12%, 0) rotate(-45deg);
+            transform: translate(12%, -24%) rotate(-45deg);
           }
         }
       }
