@@ -1238,9 +1238,13 @@
       justify-content: space-between;
       align-items: stretch;
       padding: 100px 0;
-      max-width: 800px;
+      max-width: 1024px;
       margin: 0 auto;
       font-size: 0;
+      @include media(tb) {
+        width: 90%;
+        margin: 0 auto;
+      }
       @include media(sp) {
         width: 90%;
         padding: 1rem 0 0;
@@ -1280,6 +1284,12 @@
         .list {
           margin-bottom: 30px;
           line-height: 1.8;
+          letter-spacing: -.01em;
+        }
+        &:first-of-type {
+          @include media(tp){
+            border-top: 1px solid #777; 
+          }
         }
         &:last-child {
           border-bottom: none;
@@ -1290,7 +1300,7 @@
   .history {
     max-width: 800px;
     margin: 0 auto;
-    @include media(sp) {
+    @include media(st) {
       width: 90%;
     }
     .history-heading {
@@ -1301,6 +1311,9 @@
     }
     .history-blocks {
       margin-top: 60px;
+      @include media(sp) {
+        margin-top: .6rem;
+      }
       .history-block {
         margin-bottom: 50px;
         .heading {
@@ -1334,7 +1347,7 @@
   .project {
     max-width: 1230px;
     margin: 0 auto;
-    @include media(sp) {
+    @include media(st) {
       width: 90%;
     }
     .project-lists {
@@ -1396,7 +1409,7 @@
   .projectDetail {
     max-width: 1230px;
     margin: 0 auto;
-    @include media(sp) {
+    @include media(st) {
       width: 90%;
     }
     .projectDetail_heading {
@@ -1559,6 +1572,9 @@
   .form {
     width: 800px;
     margin: 100px auto 0;
+    @include media(tb) {
+      width: 90%;
+    }
     @include media(sp) {
       width: 90%;
       margin: 1rem auto 0;
@@ -1735,6 +1751,9 @@
         margin: 30px auto 60px;
         font-size: 14px;
         line-height: 1.8;
+        @include media(tb) {
+          width: 90%;
+        }
         @include media(sp) {
           width: 90%;
           margin: .5rem auto 1rem;
@@ -1745,7 +1764,7 @@
   .anker {
     position: relative;
     width: 100%;
-    background: $color-red;
+    background: rgba(164, 38, 41, 0.7);
     &.fix {
         @include media(pc) {
         position: fixed;
@@ -1755,25 +1774,32 @@
       }
     }
     .anker-lists {
-      max-width: 1230px;
+      max-width: 1024px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
-      @include media(sp) {
+      @include media(st) {
         flex-flow: row wrap;
       }
       .anker-lists_item {
         position: relative;
+        text-align: center;
+        @include media(tb) {
+          width: 50%;
+          &:nth-child(2n) {
+            border-left: 1px solid #fff;
+          }
+        }
         @include media(sp) {
           width: 100%;
         }
         a {
           color: #fff;
-          font-size: 18px;
+          font-size: 15px;
           font-weight: bold;
           padding: 25px 0;
-          @include media(sp) {
-            font-size: .24rem;
+          @include media(st) {
+            font-size: 1.4rem;
             text-align: center;
             border-bottom: 1px solid #fff;
             &:after {
@@ -1787,6 +1813,9 @@
               border-bottom: 1px solid #fff;
               right: 6%;
             }
+          }
+          @include media(sp) {
+            font-size: .24rem;
           }
         }
         @include media(pc) {
@@ -1904,14 +1933,16 @@
         > div {
           display: flex;
           justify-content: space-between;
+          align-items: center;
           position: relative;
           &.case2 {
             flex-direction: row-reverse;
             .list {
               background: #fff;
-              @include media(pc) {
+              @include media(tp) {
                 &:after {
                   right: auto;
+                  top: 200px;
                   left: -40px;
                   transform: rotate(180deg);
                   border-left: 40px solid #fff;
@@ -1935,7 +1966,7 @@
             background: #eee;
             border-radius: 20px;
             text-align: left;
-            @include media(pc) {
+            @include media(tp) {
               &:after {
                 content: '';
                 position: absolute;
@@ -1944,7 +1975,7 @@
                 width: 0px;
                 height: 0px;
                 border-top: 30px solid transparent;
-                border-bottom: 30px solid transparent;
+                border-bottom: 0px solid transparent;
                 border-left: 40px solid #eee;
               }
             }
