@@ -1815,8 +1815,8 @@
   }
   .map {
     max-width: 1230px;
-    padding: 160px 0;
-    margin: -180px auto;
+    padding: 140px 0;
+    margin: -158px auto;
     @include  media(sp) {
       width: 90%;
     }
@@ -1834,9 +1834,9 @@
     }
   }
   .consul {
-    padding: 160px 0;
+    padding: 157px 0;
     @include media(pc) {
-      margin-top: -80px;
+      margin-top:-66px;
     }
     &.case1 {
       background: #eee;
