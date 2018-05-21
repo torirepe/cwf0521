@@ -39,7 +39,7 @@ function heroVideo() {
     current = Math.round(current);
     current = current / 10;
     
-    if(current < 3.8) {
+    if(current < 3.7) {
       $("[data-copy]").attr("data-copy" ,"1");
     } else if (current < 6.9) {
       $("[data-copy]").attr("data-copy" ,"2");
