@@ -1,0 +1,140 @@
+.c-sectionheading {
+  padding-top: 70px;
+  text-align: center;
+  span {
+    display: inline-block;
+    border-bottom: 4px solid $color-red;
+    padding-bottom: .1em;
+    font-family: $fontfamily-roboto-condensed;
+    font-size: 29px;
+    letter-spacing: .2em;
+    text-indent: .2em;
+    color: $color-red;
+    @include media(sp) {
+      font-size: .28rem;
+    }
+  }
+  &.c-sectionheading__jp {
+    font-size: 24px;
+    font-weight: bold;
+    span {
+      padding-bottom: 15px;
+      border-bottom: 4px solid #000;
+      line-height: 1.26;
+      font-size: 26px;
+      letter-spacing: .16em;
+      color: #000;
+      @include media(sp) {
+        font-size: .38rem;
+      }
+    }
+  }
+}
+
+.c-headinglead {
+  text-align: center;
+  .c-heading {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: .1em;
+    text-indent: -.1em;
+    line-height: 1.5;
+    @include media(sp) {
+      font-size: .28rem;
+    }
+  }
+  .c-lead {
+    font-size: 18px;
+    letter-spacing: .1em;
+    line-height: 2.2;
+    @include media(sp) {
+      margin-top: .38rem;
+      font-size: .18rem;
+    }
+    @include media(tb) {
+      margin-top: 38px;
+    }
+    @include media(pc) {
+      margin-top: 42px;
+    }
+  }
+}
+
+.c-morebtn {
+  a {
+    display: inline-block;
+    background-color: $color-red;
+    padding: .6em 1em .5em;
+    font-size: 14px;
+    color: $color-white;
+    letter-spacing: .2em;
+    @include media(sp) {
+      font-size: .18rem;
+    }
+    &:hover {
+      &:after {
+        transform: translate(50%,0);
+      }
+    }
+    &:after {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: .8em;
+      width: .8em;
+      height: 1em;
+      background: url(images/layout/arrow.svg) no-repeat center center / 100% auto;
+      transition: all .24s ease;
+    }
+  }
+}
+
+
+.c-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 15px 0;
+  border: 3px solid $color-red;
+  font-size: 16px;
+  color: $color-red;
+  font-weight: bold;
+  transition: .24s ease all;
+  &:hover {
+    background: $color-red;
+    color: #fff;
+  }
+}
+.c-visual {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 92px;
+  width: 100%;
+  height: 400px;
+  text-align: center;
+  color: $color-white;
+  @include media(sp) {
+    padding-top: .92rem;
+  }
+  .c-visual-heading__en {
+    display: block;
+    border-bottom: 4px solid $color-white;
+    padding-bottom: .1em;
+    font-weight: bold;
+    font-family: $fontfamily-roboto-condensed;
+    font-size: 29px;
+    letter-spacing: .2em;
+  }
+  .c-visual-heading__jp {
+    display: block;
+    padding-top: .6em;
+    font-weight: bold;
+    font-family: $fontfamily-roboto-condensed;
+    font-size: 16px;
+    letter-spacing: .3em;
+    @include media(sp) {
+      font-size: .16rem;
+    }
+  }
+}

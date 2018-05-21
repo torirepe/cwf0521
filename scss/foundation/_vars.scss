@@ -1,0 +1,48 @@
+// color
+$color-black: #212121;
+$color-white: #FFFFFF;
+$color-main: #0066b3;
+$color-main-dark: #005ba0;
+$color-sub: #64c29c;
+$color-gray-dark: #353535; //テキスト
+$color-gray: #afafaf; //border
+$color-gray-light: #e3e3e3;  //背景
+$color-gray-ultralight: #f0f0f0;  //背景
+$color-blue: #0070c9;
+$color-red: #a42629;
+$color-orange: #eb6100;
+$fontfamily-sans: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+$fontfamily-serif: "Hiragino Mincho ProN", 游明朝, "Yu Mincho", YuMincho, HGS明朝E, メイリオ, Meiryo, serif;
+$fontfamily-roboto-condensed: 'Roboto Condensed', sans-serif;
+$fontfamily-roboto: 'Roboto', sans-serif;
+
+// breakpoints
+$breakpoints: (
+    'pc': 'screen and (min-width: 1025px)',
+    'tb': 'screen and (max-width: 1024px) and (min-width: 641px)',
+    'sp': 'screen and (max-width: 640px)',
+    'st': 'screen and (max-width: 1024px)',
+    'tp': 'screen and (min-width: 641px)',
+) !default;
+@mixin media($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content;
+        }
+    } @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+    }
+}
+
+// font
+@mixin fontsize($size: 24, $base: 16) {
+  font-size: $size + px;
+  font-size: ($size / $base) * 1rem;
+}
+
+// テキストの両端揃え
+@mixin justify {
+  text-align: justify;
+  text-justify: inter-ideograph;
+}

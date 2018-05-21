@@ -1,0 +1,102 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  @include media(sp) {
+    font-size: 10 / 640 * 1000 + vw;
+  }
+  @include media(tb) {
+    font-size: 10px;
+  }
+  @include media(pc) {
+    font-size: 10px;
+  }
+}
+body{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: 100%;
+  overflow-y: scroll;
+  position: relative;
+  font-family: $fontfamily-sans;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 1;
+  word-wrap: break-word;
+}
+a{
+  color: $color-black;
+  text-decoration: none;
+}
+a:hover {
+  transition: all 0.3s;
+}
+::selection {
+  background: $color-gray-light;
+  color: $color-black;
+  text-shadow: none;
+}
+::-moz-selection {
+  background: $color-gray-light;
+  color: $color-black;
+  text-shadow: none;
+}
+.legacy-ie {
+  background: #eee;
+  width: 100%;
+  padding: 100px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  z-index: 10000;
+}
+.legacy-ie a {
+  color: $color-main;
+  text-decoration: none;
+}
+.noscript {
+  background: $color-gray-light;
+  width: 100%;
+  padding: 100px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  z-index: 10000;
+}
+
+.is-sp {
+  @include media(tb) {
+    display: none !important;
+  }
+  @include media(pc) {
+    display: none !important;
+  }
+}
+.is-tb {
+  @include media(sp) {
+    display: none !important;
+  }
+  @include media(pc) {
+    display: none !important;
+  }
+}
+.is-pc {
+  @include media(sp) {
+    display: none !important;
+  }
+  @include media(tb) {
+    display: none !important;
+  }
+}
+.is-st {
+  @include media(pc) {
+    display: none !important;
+  }
+}
+.is-tp {
+  @include media(sp) {
+    display: none !important;
+  }
+}

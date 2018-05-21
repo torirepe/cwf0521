@@ -1,0 +1,163 @@
+// footer
+#footer {
+  margin-top: 88px;
+  padding-bottom: 52px;
+  width: 100%;
+  background-color: $color-gray-ultralight;
+  @include media(sp) {
+    padding-bottom: .78rem;
+  }
+  @include media(pc) {
+    min-width: 1260px;
+  }
+  .redarea {
+    background-color: $color-red;
+    color: $color-white;
+    a {
+      padding: 20px 0;
+      display: block;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      @include media(sp) {
+        padding: .2rem;
+      }
+      .icon {
+        width: 56px;
+        @include media(sp) {
+          width: .54rem;
+        }
+      }
+      @include media(pc) {
+        &:hover {
+          .text {
+            &:after {
+              transform: translate(50%,0);
+            }
+          }
+        }
+      }
+      .text {
+        position: relative;
+        margin-left: 12px;
+        padding-right: 76px;
+        text-align: left;
+        color: $color-white;
+        box-sizing: content-box;
+        @include media(sp) {
+          padding-right: .76rem;
+        }
+        
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 24px;
+          height: 100%;
+          background: url(images/layout/arrow.svg) no-repeat center center / 100% auto;
+          transition: all .24s ease;
+          @include media(sp) {
+            width: .24rem;
+          }
+        }
+        .en {
+          display: block;
+          font-family: $fontfamily-roboto-condensed;
+          font-size: 25px;
+          font-weight: bold;
+          letter-spacing: .2em;
+          @include media(sp) {
+            font-size: .25rem;
+          }
+        }
+        .jp {
+          display: block;
+          margin-top: .2em;
+          font-size: 14px;
+          letter-spacing: .35em;
+          @include media(sp) {
+            font-size: .15rem;
+          }
+        }
+      }
+    }
+  }
+  .gnav {
+    margin: 86px auto 0;
+    width: 812px;
+    @include media(sp) {
+      margin-top: .9rem;
+      padding: 0 .094rem;
+      width: 100%;
+    }
+    @include media(tb) {
+      width: 600px;
+    }
+    ul {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      @include media(pc) {
+        justify-content: space-between;
+      }
+      li {
+        @include media(sp) {
+          margin-left: .5rem;
+          &:nth-child(4n+1) {
+            margin-left: 0;
+          }
+          &:nth-child(n+5) {
+            margin-top: .3rem;
+          }
+        }
+        @include media(tb) {
+          margin-left: 80px;
+          &:nth-child(4n+1) {
+            margin-left: 0;
+          }
+          &:nth-child(n+5) {
+            margin-top: 30px;
+          }
+        }
+        a {
+          font-size: 12px;
+          color: $color-red;
+          letter-spacing: .35em;
+          transition: all .24s ease;
+          @include media(sp) {
+            font-size: .15rem;
+          }
+          @include media(pc) {
+            &:hover {
+              opacity: .6;
+            }
+          }
+        }
+      }
+    }
+  }
+  .logo {
+    margin: 90px auto 0;
+    width: 160px;
+    @include media(sp) {
+      margin-top: .68rem;
+      width: 1.62rem;
+    }
+  }
+  address {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 2.2;
+    letter-spacing: .2em;
+    color: $color-gray-dark;
+    @include media(sp) {
+      margin-top: .26rem;
+      font-size: .14rem;
+    }
+  }
+}
