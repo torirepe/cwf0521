@@ -22,6 +22,12 @@
     @include media(sp) {
       width: 2.75rem;
     }
+    @include media(pc) {
+      transition: all .24s ease;
+      &:hover {
+        opacity: .6;
+      }
+    }
   }
   .gnav {
     @include media(sp) {
@@ -60,6 +66,13 @@
           &:first-child {
             a {
               border-top: 1px solid $color-white;
+            }
+          }
+        }
+        @include media(pc) {
+          &.is-active {
+            a {
+              color: $color-red;
             }
           }
         }

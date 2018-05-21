@@ -1,6 +1,6 @@
+var ua = navigator.userAgent;
+var device;
 $(function () {
-  var ua = navigator.userAgent;
-  var device;
   if (ua.indexOf('iPhone') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0) {
     device = "sp";
   } else if (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0) {
@@ -8,7 +8,7 @@ $(function () {
   } else {
     device = "pc";
   }
-})
+});
 
 $(window).load(function(){
   headerMenu();
@@ -171,28 +171,24 @@ $(document).ready(function() {
   });
 });
 
-$(window).on('load', function(){
-  var bt = $(".anker").offset().top;
+$(window).on('load scroll', function(){
+  var bt = $("#anchor").offset().top;
   var ds = 0;
-  $(document).scroll(function(){
-    ds = $(this).scrollTop();
-
-    if (bt-92 <= ds) {
-      $(".anker").addClass('fix');
-    } else if (bt+92 >= ds) {
-      $(".anker").removeClass('fix');
-    }
-  });
+  ds = $(this).scrollTop();
+  if (bt-92 <= ds) {
+    $(".anchor").addClass('fix');
+  } else if (bt+92 >= ds) {
+    $(".anchor").removeClass('fix');
+  }
 });
 
 
 $(function(){
-  var headerHight = 100;
-  $('a[href^=#]').click(function() {    
+  $('a[href^=#]').click(function() {
     var speed = 400;
     var href= $(this).attr("href");
     var target = $(href == "#" || href == "" ? 'html' : href);
-    var position = target.offset().top-headerHight; // ※　-headerHightでズレの処理
+    var position = target.offset().top;
     $('body,html').animate({scrollTop:position}, speed, 'swing');
     return false;
   });
