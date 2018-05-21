@@ -15,7 +15,7 @@
     padding-left: 4.6%;
   }
   @include media(pc) {
-    min-width: 1230px;
+    //min-width: 1230px;
   }
   .sitename {
     width: 278px;
@@ -81,9 +81,15 @@
             position: relative;
             padding-left: 46px;
             text-align: left;
-            color: $color-white;
+            color: $color-white !important;
+            &:hover {
+              &:after {
+                transform: translate(50%,0);
+              }
+            }
             &:after {
               content: '';
+              transition: all .24s ease;
               position: absolute;
               top: 0;
               right: 30px;
@@ -124,10 +130,10 @@
             @include media(pc) {
               font-size: 18px;
             }
-            //@media screen and (max-width: 1200px) and (min-width: 1025px) {
-            //  font-size: 16px;
-            //  letter-spacing: .1em;
-            //}
+            @media screen and (max-width: 1200px) and (min-width: 1025px) {
+              font-size: 16px;
+              letter-spacing: .1em;
+            }
           }
           .jp {
             display: block;
@@ -137,10 +143,10 @@
             @include media(sp) {
               font-size: .2rem;
             }
-            //@media screen and (max-width: 1200px) and (min-width: 1025px) {
-            //  font-size: 12px;
-            //  letter-spacing: .2em;
-            //}
+            @media screen and (max-width: 1200px) and (min-width: 1025px) {
+              font-size: 12px;
+              letter-spacing: .2em;
+            }
           }
         }
       }

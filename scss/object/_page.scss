@@ -799,7 +799,7 @@
     @include media(pc) {
       padding-bottom: 90px;
       min-width: 1230px;
-      background: url(images/concept/workplace_bg.svg) no-repeat center center / 1600px auto;
+      background: url(images/concept/workplace_bg.svg) no-repeat top -128px center/1600px auto;
     }
     &:after {
       content: '';
@@ -897,8 +897,8 @@
         padding: 0 60px;
       }
       @include media(pc) {
-        margin: 76px auto;
-        padding: 0 15px;
+        margin: 76px auto 12px;
+        padding: 0 20px;
         width: 1230px;
       }
       .detail-block {
