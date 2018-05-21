@@ -7,6 +7,9 @@
     width: 100%;
     height: 834px;
     overflow: hidden;
+    @include media(st) {
+      background: url(../images/index/hero_bg-sp.jpg) repeat center center / cover;
+    }
     @include media(pc) {
       min-width: 1230px;
     }
@@ -21,124 +24,81 @@
       height: 100%;
       background: url(../images/index/hero_f.png) repeat center center;
     }
+    > * {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-copysp {
+      text-align: center;
+      @include media(sp) {
+        padding: 0 .6rem;
+      }
+      @include media(tb) {
+        padding: 0 60px;
+      }
+      .en {
+        display: block;
+        font-weight: bold;
+        font-family: $fontfamily-roboto-condensed;
+        color: $color-red;
+        letter-spacing: .1em;
+        @include media(sp) {
+          text-align: justify;
+          font-size: .43rem;
+        }
+        @include media(tb) {
+          font-size: 50px;
+        }
+        @include media(pc) {
+          letter-spacing: .2em;
+          font-size: 75px;
+        }
+      }
+      .jp {
+        display: block;
+        margin-top: 1em;
+        font-weight: bold;
+        letter-spacing: .3em;
+        color: $color-white;
+        @include media(sp) {
+          text-align: justify;
+          font-size: .18rem;
+        }
+        @include media(tb) {
+          font-size: 16px;
+        }
+      }
+    }
     .hero-copy {
       position: relative;
       z-index: 2;
-      &.active {
-        .hero-copy_text {
-          transform-origin: center center;
-          &:nth-child(1) {
-            transform-origin: 25% center;
-            animation: 13.1s ease infinite normal both text1;
-          }
-          &:nth-child(2) {
-            transform-origin: 75% center;
-            animation: 13.1s ease infinite normal both text2;
-          }
-          &:nth-child(3) {
-            transform-origin: 75% center;
-            animation: 13.1s ease infinite normal both text3;
-          }
-          &:nth-child(4) {
-            transform-origin: 75% center;
-            animation: 13.1s ease infinite normal both text4;
-          }
-          @keyframes text1 {
-            0% {
-              transform: translate(0,-50%) scale(1.1);
-              opacity: 0;
-            }
-            1% {
-              transform: translate(0,-50%) scale(1);
-              opacity: 1;
-            }
-            29% {
-              transform: translate(0,-50%) scale(1);
-              opacity: 1;
-            }
-            30% {
-              transform: translate(0,-50%) scale(.9);
-              opacity: 0;
-            }
-            100% {
-              transform: translate(0,-50%) scale(1.1);
-              opacity: 0;
-            }
-          }
-          @keyframes text2 {
-            0% {
-              transform: translate(0,-50%) scale(1.1);
-              opacity: 0;
-            }
-            30% {
-              transform: translate(0,-50%) scale(1.1);
-              opacity: 0;
-            }
-            31% {
-              transform: translate(0,-50%) scale(1);
-              opacity: 1;
-            }
-            52% {
-              transform: translate(0,-50%) scale(1);
-              opacity: 1;
-            }
-            53% {
-              transform: translate(0,-50%) scale(.9);
-              opacity: 0;
-            }
-            100% {
-              transform: translate(0,-50%) scale(1.1);
-              opacity: 0;
-            }
-          }
-          @keyframes text3 {
-            0% {
-              transform: translate(0,-50%) scale(1.1);
-              opacity: 0;
-            }
-            54% {
-              transform: translate(0,-50%) scale(1.1);
-              opacity: 0;
-            }
-            55% {
-              transform: translate(0,-50%) scale(1);
-              opacity: 1;
-            }
-            76% {
-              transform: translate(0,-50%) scale(1);
-              opacity: 1;
-            }
-            77% {
-              transform: translate(0,-50%) scale(.9);
-              opacity: 0;
-            }
-            100% {
-              transform: translate(0,-50%) scale(1.1);
-              opacity: 0;
-            }
-          }
-          @keyframes text4 {
-            0% {
-              transform: translate(0,-50%) scale(1.1);
-              opacity: 0;
-            }
-            78% {
-              transform: translate(0,-50%) scale(1.1);
-              opacity: 0;
-            }
-            79% {
-              transform: translate(0,-50%) scale(1);
-              opacity: 1;
-            }
-            99% {
-              transform: translate(0,-50%) scale(1);
-              opacity: 1;
-            }
-            100% {
-              transform: translate(0,-50%) scale(.9);
-              opacity: 0;
-            }
-          }
+      .hero-copy_text {
+        opacity: 0;
+        transform: translate(0, -50%) scale(1);
+        transition: all .24s ease;
+      }
+      &[data-copy="1"] {
+        .hero-copy_text:nth-child(1) {
+          opacity: 1;
+          transform: translate(0, -50%) scale(1);
+        }
+      }
+      &[data-copy="2"] {
+        .hero-copy_text:nth-child(2) {
+          opacity: 1;
+          transform: translate(0, -50%) scale(1);
+        }
+      }
+      &[data-copy="3"] {
+        .hero-copy_text:nth-child(3) {
+          opacity: 1;
+          transform: translate(0, -50%) scale(1);
+        }
+      }
+      &[data-copy="4"] {
+        .hero-copy_text:nth-child(4) {
+          opacity: 1;
+          transform: translate(0, -50%) scale(1);
         }
       }
       .hero-copy_text {
@@ -146,7 +106,6 @@
         top: 50%;
         left: 0;
         width: 100%;
-        transform: translate(0, -50%);
         text-align: center;
         @include media(sp) {
           padding: 0 .094rem;
@@ -158,9 +117,6 @@
           padding: 0 70px;
           text-align: right;
         }
-        
-        
-        
         &.is-red {
           @include media(pc) {
             text-align: left;
@@ -171,16 +127,7 @@
             font-family: $fontfamily-roboto-condensed;
             color: $color-red;
             letter-spacing: .1em;
-            @include media(sp) {
-              font-size: .45rem;
-            }
-            @include media(tb) {
-              font-size: 50px;
-            }
-            @include media(pc) {
-              letter-spacing: .2em;
-              font-size: 75px;
-            }
+            font-size: 75px;
           }
           .jp {
             display: block;
@@ -190,16 +137,6 @@
             font-size: 24px;
             letter-spacing: .3em;
             color: $color-white;
-            @include media(sp) {
-              font-size: .19rem;
-            }
-            @include media(tb) {
-              font-size: 16px;
-            }
-            @include media(pc) {
-              font-size: 24px;
-              color: $color-black;
-            }
           }
         }
         .strong {
@@ -208,15 +145,7 @@
           font-family: $fontfamily-roboto-condensed;
           letter-spacing: .2em;
           color: $color-white;
-          @include media(sp) {
-            font-size: .45rem;
-          }
-          @include media(tb) {
-            font-size: 50px;
-          }
-          @include media(pc) {
-            font-size: 75px;
-          }
+          font-size: 75px;
         }
         .small {
           display: block;
@@ -224,15 +153,7 @@
           font-size: 75px;
           letter-spacing: .2em;
           color: $color-white;
-          @include media(sp) {
-            font-size: .45rem;
-          }
-          @include media(tb) {
-            font-size: 50px;
-          }
-          @include media(pc) {
-            font-size: 75px;
-          }
+          font-size: 75px;
         }
       }
     }
@@ -252,8 +173,18 @@
   }
   .concept {
     position: relative;
-    padding-bottom: 70px;
-    background: url(images/index/concept_bg.svg) no-repeat center center;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    padding-bottom: 78px;
+    background: url(images/index/concept_bg.png) no-repeat center center;
+    @include media(pc) {
+      background-attachment: fixed;
+    }
+    > * {
+      position: relative;
+      z-index: 1;
+    }
     @include media(sp) {
       padding: 0 .6rem;
     }
@@ -264,6 +195,7 @@
       min-width: 1230px;
     }
     .concept-block {
+      box-sizing: content-box;
       @include media(sp) {
         margin-top: .68rem;
       }
@@ -271,24 +203,25 @@
         margin-top: 68px;
       }
       @include media(pc) {
-        margin: 90px auto 0;
+        margin: 60px auto 0;
+        padding-right: 50px;
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
         align-items: flex-start;
-        width: 1100px;
+        width: 1110px;
       }
       .concept-copy {
         @include media(pc) {
-          width: 490px;
+          width: 480px;
         }
         .concept-copy__heading {
           .jp {
             display: block;
             font-weight: bold;
             font-size: 44px;
-            line-height: 1.6;
-            letter-spacing: .1em;
+            line-height: 1.4;
+            letter-spacing: .09em;
             @include media(sp) {
               font-size: .35rem;
             }
@@ -333,7 +266,8 @@
           margin-top: 2em;
           font-size: 18px;
           line-height: 2.1;
-          letter-spacing: .03em;
+          letter-spacing: .02em;
+          text-align: justify;
           @include media(sp) {
             font-size: .18rem;
           }
@@ -349,7 +283,7 @@
           width: 532px;
         }
         @include media(pc) {
-          margin: 20px 40px 0 38px;
+          margin: 20px 0 0 80px;
         }
         img {
           position: relative;
@@ -371,7 +305,7 @@
     .concept-text {
       margin: 20px auto 0;
       @include media(pc) {
-        width: 1100px;
+        width: 1144px;
       }
       .concept-text__arrow {
         margin-left: 1.2em;
@@ -379,6 +313,7 @@
         font-size: 26px;
         line-height: 2;
         font-weight: bold;
+        letter-spacing: .1em;
         @include media(sp) {
           font-size: .21rem;
         }
@@ -404,9 +339,9 @@
       mix-blend-mode: multiply;
       @include media(sp) {
         margin: .42rem 0 0 -.6rem;
-        padding: .28rem .65rem;
+        padding: .6rem .65rem;
         width: 90vw;
-        line-height: 1.4;
+        line-height: 1.6;
       }
       @include media(tb) {
         margin: 42px 0 0 -60px;
@@ -416,12 +351,12 @@
       }
       @include media(pc) {
         margin-top: 42px;
-        padding: 28px 0 28px 65px;
+        padding: 33px 0 33px 65px;
         width: 750px;
         box-sizing: content-box;
       }
       @media screen and (min-width: 1230px) {
-        padding-left: calc( (100vw - 1100px) / 2);
+        padding-left: calc( (100vw - 1144px) / 2);
       }
       .concept-list__items {
         .concept-list__item {
@@ -434,6 +369,10 @@
           }
           @include media(sp) {
             font-size: .19rem;
+            font-weight: bold;
+            &:nth-child(n+2) {
+              margin-top: 2.2em;
+            }
           }
           @include media(tb) {
             font-size: 19px;
@@ -457,7 +396,7 @@
       }
       @include media(pc) {
         position: absolute;
-        bottom: 84px;
+        bottom: 78px;
         left: 50%;
         margin-left: 372px;
       }
@@ -487,7 +426,7 @@
         padding-bottom: 76px;
       }
       @include media(pc) {
-        margin-top: 72px;
+        margin-top: 70px;
         padding-bottom: 56px;
       }
     }
@@ -546,6 +485,7 @@
             .casestudy-slider__item {
               float: none;
               opacity: .4;
+              pointer-events: none;
               padding: 0 4.2vw;
               width: 84.6vw !important;
               transition: all .48s ease;
@@ -555,6 +495,7 @@
               }
               &.active {
                 opacity: 1;
+                pointer-events: all;
               }
               .name {
                 margin-top: 1.4em;
@@ -612,7 +553,10 @@
     }
     .casestudy-btn {
       text-align: center;
-      padding: 76px 0 62px;
+      padding: 70px 0 62px;
+      @include media(sp) {
+        padding: .4rem 0 .9rem;
+      }
     }
   }
 
@@ -651,6 +595,7 @@
         justify-content: space-between;
         align-items: stretch;
         margin: 0 auto;
+        padding-bottom: 86px;
         width: 1230px;
       }
       .service-content__item {
@@ -695,7 +640,9 @@
           margin-top: 1.8em;
           line-height: 2.2;
           @include media(sp) {
+            margin-top: 1.6em;
             font-size: .18rem;
+            line-height: 1.8;
           }
           @include media(tb) {
             font-size: 18px;
@@ -710,6 +657,9 @@
           display: flex;
           flex-flow: row wrap;
           justify-content: space-between;
+          @include media(sp) {
+            margin-top: .2rem;
+          }
           li {
             width: 50%;
             line-height: 1.8;
@@ -727,7 +677,10 @@
           }
         }
         .image {
-          margin-top: 34px;
+          margin-top: 28px;
+          @include media(sp) {
+            margin-top: .3rem;
+          }
         }
         .btn {
           text-align: center;
@@ -755,7 +708,6 @@
       padding: 0 60px;
     }
     @include media(pc) {
-      padding-bottom: 90px;
       width: 1230px;
     }
     .company-list {
@@ -776,6 +728,7 @@
         margin: 72px auto 0;
         width: 780px;
         font-size: 15px;
+        letter-spacing: .2em;
         line-height: 1;
       }
       .company-list_term {
@@ -794,6 +747,9 @@
       }
       *:nth-child(n+3) {
         margin-top: 24px;
+        @include media(sp) {
+          margin-top: .2rem;
+        }
       }
     }
     .company-btn {
@@ -822,7 +778,6 @@
     position: relative;
     @include media(sp) {
       padding-bottom: .9rem;
-      
     }
     @include media(tb) {
       padding-bottom: 90px;
@@ -839,10 +794,12 @@
       left: 50%;
       bottom: 0;
       width: 115px;
+      height: 115px;
       transform: translate(-50%, 50%) rotate(45deg);
       background-color: #fff;
       @include media(sp) {
         width: 1.15rem;
+        height: 1.15rem;
       }
     }
     .intro {
@@ -927,6 +884,7 @@
       }
       @include media(pc) {
         margin: 76px auto;
+        padding: 0 15px;
         width: 1230px;
       }
       .detail-block {
@@ -984,6 +942,7 @@
         }
         .text {
           line-height: 2.2;
+          text-align: justify;
           @include media(sp) {
             margin-top: 1em;
             font-size: .18rem;
@@ -1041,7 +1000,7 @@
               margin-right: 60px;
             }
             &:after {
-              margin: 3.5% 0 0 3.5%;
+              margin: 3.2% 0 0 3.2%;
             }
           }
           img {
@@ -1097,32 +1056,20 @@
       .approach-list_item {
         position: relative;
         margin-top: 50px;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
         @include media(sp) {
           margin-top: .5rem;
         }
-        @include media(pc) {
-
-        }
-        @include media(pc) {
-          display: flex;
-          flex-flow: row wrap;
-          align-items: center;
-          justify-content: space-between;
-          width: 100%;
-        }
         .image {
           @include media(sp) {
-            position: absolute;
-            top: 0;
-            left: 0;
-            margin-left: -18%;
-            width: 38.4%;
+            width: 19%;
           }
           @include media(tb) {
-            position: absolute;
-            top: 0;
-            left: -10px;
-            width: 190px;
+            width: 180px;
           }
           @include media(pc) {
             width: 228px;
@@ -1134,10 +1081,10 @@
           }
           .title {
             @include media(sp) {
-              margin-left: 25%;
+              margin: -19% 0 0 25%;
             }
             @include media(tb) {
-              margin-left: 200px;
+              margin: -180px 0 0 200px;
             }
             @include media(pc) {
               display: flex;
@@ -1199,14 +1146,16 @@
   .office {
     @include media(sp) {
       margin-top: .6rem;
-      padding: 0 .6rem;
+      padding: 0 .6rem .6rem;
     }
     @include media(tb) {
       margin-top: 60px;
+      padding-bottom: 60px;
       padding: 0 60px;
     }
     @include media(pc) {
       margin-top: 70px;
+      padding-bottom: 88px;
       min-width: 1230px;
     }
     .office-block1,
@@ -1214,7 +1163,7 @@
       display: block;
       margin: 0 auto;
       @include media(pc) {
-        width: 1230px;
+        width: 1000px;
       }
     }
     .office-block2 {

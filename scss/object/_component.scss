@@ -1,6 +1,9 @@
 .c-sectionheading {
-  padding-top: 70px;
+  padding-top: 92px;
   text-align: center;
+  @include media(sp) {
+    padding-top: .9rem;
+  }
   span {
     display: inline-block;
     border-bottom: 4px solid $color-red;
@@ -12,6 +15,7 @@
     color: $color-red;
     @include media(sp) {
       font-size: .28rem;
+      border-bottom: 2px solid $color-red;
     }
   }
   &.c-sectionheading__jp {
@@ -33,6 +37,12 @@
 
 .c-headinglead {
   text-align: center;
+  @include media(sp) {
+    padding: 0 .6rem;
+  }
+  @include media(tb) {
+    padding: 0 60px;
+  }
   .c-heading {
     font-size: 28px;
     font-weight: bold;
@@ -46,16 +56,18 @@
   .c-lead {
     font-size: 18px;
     letter-spacing: .1em;
-    line-height: 2.2;
+    line-height: 2.1;
     @include media(sp) {
       margin-top: .38rem;
       font-size: .18rem;
+      letter-spacing: -.06em;
+      line-height: 1.8;
     }
     @include media(tb) {
       margin-top: 38px;
     }
     @include media(pc) {
-      margin-top: 42px;
+      margin-top: 20px;
     }
   }
 }
@@ -70,6 +82,7 @@
     letter-spacing: .2em;
     @include media(sp) {
       font-size: .18rem;
+      padding: .3em .6em .25em;
     }
     &:hover {
       &:after {

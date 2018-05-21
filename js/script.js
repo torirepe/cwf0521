@@ -1,8 +1,22 @@
+$(function () {
+  var ua = navigator.userAgent;
+  var device;
+  if (ua.indexOf('iPhone') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0) {
+    device = "sp";
+  } else if (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0) {
+    device = "tablet";
+  } else {
+    device = "pc";
+  }
+})
+
 $(window).load(function(){
   headerMenu();
   if ($('#index').length) {
     casestudySlider();
-    heroVideo();
+    if(device == "pc") {
+      heroVideo();
+    };
   };
 });
 
@@ -17,10 +31,26 @@ function headerMenu() {
 }
 
 function heroVideo() {
-  var video = document.getElementById('heroVideo');
-  video.oncanplaythrough = function(){
-    $("#heroCopy").addClass("active");
+  var video = document.getElementById('heroVideo'),
+      current;
+  
+  function videocurrent(){
+    current = video.currentTime * 10;
+    current = Math.round(current);
+    current = current / 10;
+    
+    if(current < 3.8) {
+      $("[data-copy]").attr("data-copy" ,"1");
+    } else if (current < 6.9) {
+      $("[data-copy]").attr("data-copy" ,"2");
+    } else if (current < 10) {
+      $("[data-copy]").attr("data-copy" ,"3");
+    } else {
+      $("[data-copy]").attr("data-copy" ,"4");
+    }
+    setTimeout(videocurrent, 200);
   };
+  videocurrent();
 }
 
 function casestudySlider() {
