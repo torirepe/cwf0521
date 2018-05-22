@@ -9,7 +9,8 @@
   .hero {
     position: relative;
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     width: 100%;
     height: 100vh;
@@ -221,7 +222,8 @@
         margin: 60px auto 0;
         padding-right: 50px;
         display: flex;
-        flex-flow: row wrap;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: flex-start;
         width: 1110px;
@@ -488,7 +490,8 @@
           overflow: visible !important;
           .casestudy-slider__items {
             display: flex;
-            flex-flow: row wrap;
+            flex-direction: row;
+            flex-wrap: wrap;
             @include media(sp) {
               padding: .44rem 0 .64rem;
             }
@@ -618,7 +621,8 @@
       }
       @include media(pc) {
         display: flex;
-        flex-flow: row wrap;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: stretch;
         margin: 0 auto;
@@ -682,7 +686,8 @@
         .list {
           margin-top: 20px;
           display: flex;
-          flex-flow: row wrap;
+          flex-direction: row;
+          flex-wrap: wrap;
           justify-content: space-between;
           @include media(sp) {
             margin-top: .2rem;
@@ -739,7 +744,8 @@
     }
     .company-list {
       display: flex;
-      flex-flow: row wrap;
+      flex-direction: row;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: flex-start;
       line-height: 1.8;
@@ -813,6 +819,10 @@
       padding-bottom: 90px;
       min-width: 1230px;
       background: url(images/concept/workplace_bg.svg) no-repeat top -128px center/1600px auto;
+    }
+    @media screen and (max-width: 1240px) {
+      width: 100%;
+      min-width: auto;
     }
     &:after {
       content: '';
@@ -914,19 +924,25 @@
         padding: 0 20px;
         width: 1230px;
       }
+      @media screen and (max-width: 1240px) {
+        width: 100%;
+      }
       .detail-block {
         display: flex;
         justify-content: space-between;
         align-items: center;
         @include media(sp) {
-          flex-flow: column wrap;
+          flex-direction: column;
+          flex-wrap: wrap;
         }
         @include media(tb) {
-          flex-flow: column wrap;
+          flex-direction: column;
+          flex-wrap: wrap;
         }
         &.order {
           @include media(pc) {
-            flex-flow: row-reverse wrap;
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
           }
         }
         &:nth-child(n+2) {
@@ -951,7 +967,7 @@
             margin-top: 78px;
           }
           @include media(pc) {
-            width: 594px;
+            width: 48%;
           }
         }
         .heading {
@@ -990,12 +1006,12 @@
             order: 1;
           }
           @include media(tb) {
-            width: calc(100% + 60px);
+            width: calc(100% - 120px);
             order: 1;
           }
           @include media(pc) {
             order: 1;
-            width: 476px;
+            width: 45%;
           }
           &:after {
             content: '';
@@ -1050,6 +1066,10 @@
     @include media(pc) {
       min-width: 1230px;
     }
+    @media screen and (max-width: 1240px) {
+      width: 100%;
+      min-width: auto;
+    }
     .approach-heading {
       margin: 0 auto;
       padding: .9em 0;
@@ -1084,7 +1104,8 @@
         position: relative;
         margin-top: 50px;
         display: flex;
-        flex-flow: row wrap;
+        flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
         width: 100%;
@@ -1115,7 +1136,8 @@
             }
             @include media(pc) {
               display: flex;
-              flex-flow: row wrap;
+              flex-direction: row;
+              flex-wrap: wrap;
               align-items: center;
             }
             color: $color-red;
@@ -1185,12 +1207,20 @@
       padding-bottom: 88px;
       min-width: 1230px;
     }
+    @media screen and (max-width: 1240px) {
+      width: 100%;
+      min-width: auto;
+    }
     .office-block1,
     .office-block2 {
       display: block;
       margin: 0 auto;
       @include media(pc) {
         width: 1000px;
+      }
+      @media screen and (max-width: 1240px) {
+        width: 100%;
+        min-width: auto;
       }
     }
     .office-block2 {
@@ -1210,7 +1240,8 @@
     background: #eee;
     .profile-list {
       display: flex;
-      flex-flow: row wrap;
+      flex-direction: row;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: stretch;
       padding: 100px 0;
@@ -1329,7 +1360,8 @@
     }
     .project-lists {
       display: flex;
-      flex-flow: row wrap;
+      flex-direction: row;
+      flex-wrap: wrap;
       justify-content: space-between;
       margin-top: 60px;
       &:after {
@@ -1398,7 +1430,8 @@
     }
     .projectDetail-lists {
       display: flex;
-      flex-flow: row wrap;
+      flex-direction: row;
+      flex-wrap: wrap;
       justify-content: space-between;
       &:after {
         content: '';
@@ -1429,7 +1462,8 @@
       }
       .list {
         display: flex;
-        flex-flow: row wrap;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: stretch;
         margin-top: 40px;
@@ -1765,7 +1799,8 @@
         display: flex;
         justify-content: space-between;
         @include media(st) {
-          flex-flow: row wrap;
+          flex-direction: row;
+          flex-wrap: wrap;
         }
         .anchor-lists_item {
           position: relative;
@@ -1968,7 +2003,8 @@
             }
           }
           @include media(sp) {
-            flex-flow: row wrap;
+            flex-direction: row;
+            flex-wrap: wrap;
           }
           .pic {
             width: 25%;
@@ -2057,7 +2093,8 @@
       }
       .consul-underBlock_lists {
         display: flex;
-        flex-flow: row wrap;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: space-between;
         .consul-underBlock_lists__items {
           display: flex;
