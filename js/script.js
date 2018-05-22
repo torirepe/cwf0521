@@ -161,6 +161,7 @@ $(function(){
   });
 });
 
+
 $(document).ready(function() {
   $('nav ul li a').each(function() {
     var activeUrl = location.pathname.split("/")[1];
@@ -193,3 +194,4 @@ $(function(){
     return false;
   });
 });
+
