@@ -1,4 +1,11 @@
 #index {
+  section {
+    opacity: 0;
+    transition: .5s all .5s ease;
+    &.is-inview {
+      opacity: 1;
+    }
+  }
   .hero {
     position: relative;
     display: flex;
@@ -43,10 +50,11 @@
         display: block;
         font-weight: bold;
         font-family: $fontfamily-roboto-condensed;
+        text-indent: .1em;
         color: $color-red;
         letter-spacing: .1em;
         @include media(sp) {
-          text-align: justify;
+          text-align: center;
           font-size: .43rem;
         }
         @include media(tb) {
@@ -291,6 +299,7 @@
         }
         @include media(pc) {
           margin: 20px 0 0 80px;
+          max-width: 523px;
         }
         img {
           position: relative;
@@ -1462,6 +1471,9 @@
   .detail {
     max-width: 1230px;
     margin: 100px auto 0;
+    @include media(tb) {
+      width: 90%;
+    }
     @include media(sp) {
       width: 90%;
       margin: 1rem auto 0;
@@ -1508,7 +1520,7 @@
         }
         .heading_small {
           margin-bottom: 10px;
-          font-size: 14px;
+          font-size: 16px;
           font-weight: bold;
           @include media(sp) {
             font-size: .24rem;
@@ -1772,6 +1784,9 @@
             font-size: 15px;
             font-weight: bold;
             padding: 25px 0;
+            &:hover {
+              opacity: .5;
+            }
             @include media(st) {
               font-size: 1.4rem;
               text-align: center;
@@ -1798,6 +1813,21 @@
                 content: none;
               }
             }
+            &:nth-child(2) {
+              &:after {
+                left: -13%;
+              }
+            }
+            &:nth-child(3) {
+              &:after {
+                left: -22%;
+              }
+            }
+            &:nth-child(4) {
+              &:after {
+                left: -41%;
+              }
+            }
             &:after {
               position: absolute;
               content: '';
@@ -1808,7 +1838,6 @@
               left: -20%;
             }
           }
-
         }
       }
     }

@@ -120,7 +120,7 @@
             font-family: $fontfamily-roboto;
             font-weight: bold;
             letter-spacing: .2em;
-            text-indent: -.2em;
+            text-indent: .2em;
             @include media(sp) {
               font-size: .3rem;
             }
@@ -140,6 +140,7 @@
             margin-top: .6em;
             font-size: 13px;
             letter-spacing: .4em;
+            text-indent: .4em;
             @include media(sp) {
               font-size: .2rem;
             }
