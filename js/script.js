@@ -183,7 +183,6 @@ $(window).on('load scroll', function(){
   }
 });
 
-
 $(function(){
   $('a[href^=#]').click(function() {
     var speed = 400;
@@ -195,3 +194,18 @@ $(function(){
   });
 });
 
+$(function(){
+  $('.project-lists__items, .projectDetail-lists__item').each(function(i){
+    var linkBase = $(this).attr('class');
+    $(this).attr('class',linkBase + ' c-animsation-' + (i+1));
+  });
+});
+
+$(function(){
+  var topBtn=$('#pageTop');  
+  topBtn.click(function(){
+    $('body,html').animate({
+      scrollTop: 0},500);
+    return false;
+  });
+});
