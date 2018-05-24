@@ -38,7 +38,7 @@
 .c-headinglead {
   text-align: center;
   @include media(sp) {
-    padding: 0 .6rem;
+    padding: 0 .4rem;
   }
   @include media(tb) {
     padding: 0 60px;
@@ -151,5 +151,21 @@
     @include media(sp) {
       font-size: .16rem;
     }
+  }
+}
+
+@for $i from 1 through 24 {
+  .c-animsation-#{$i} {
+    animation-delay:#{($i * 0.2) + 0.5}s;
+  }
+}
+@keyframes animated {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }

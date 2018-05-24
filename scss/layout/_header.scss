@@ -79,7 +79,7 @@
           background-color: $color-red;
           a {
             position: relative;
-            padding-left: 46px;
+            padding-left: 66px;
             text-align: left;
             color: $color-white !important;
             &:hover {
@@ -92,7 +92,7 @@
               transition: all .24s ease;
               position: absolute;
               top: 0;
-              right: 30px;
+              right: 26px;
               width: 18px;
               height: 100%;
               background: url(images/layout/arrow.svg) no-repeat center center / 100% auto;
@@ -128,16 +128,16 @@
               font-size: 30px;
             }
             @include media(pc) {
-              font-size: 18px;
+              font-size: 16px;
             }
             @media screen and (max-width: 1200px) and (min-width: 1025px) {
-              font-size: 16px;
+              font-size: 14px;
               letter-spacing: .1em;
             }
           }
           .jp {
             display: block;
-            margin-top: .6em;
+            margin-top: .4em;
             font-size: 13px;
             letter-spacing: .4em;
             text-indent: .4em;
@@ -197,12 +197,15 @@
       @include media(tb) {
         height: 5px;
       }
+      &:nth-child(1) {
+        margin-top: 1%;
+      }
       &:nth-child(n+2) {
         @include media(sp) {
-          margin-top: 14%;
+          margin-top: 13.45%;
         }
         @include media(tb) {
-          margin-top: 12%;
+          margin-top: 14%;
         }
       }
     }

@@ -1,11 +1,11 @@
 #index {
-  section {
-    opacity: 0;
-    transition: .5s all .5s ease;
-    &.is-inview {
-      opacity: 1;
-    }
-  }
+//  section {
+//    opacity: 0;
+//    transition: .5s all .5s ease;
+//    &.is-inview {
+//      opacity: 1;
+//    }
+//  }
   .hero {
     position: relative;
     display: flex;
@@ -220,17 +220,16 @@
       }
       @include media(pc) {
         margin: 60px auto 0;
-        padding-right: 50px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         align-items: flex-start;
-        width: 1110px;
+        width: 1000px;
       }
       .concept-copy {
         @include media(pc) {
-          width: 480px;
+          width: 42%;
         }
         .concept-copy__heading {
           .jp {
@@ -246,7 +245,7 @@
               font-size: 35px;
             }
             @include media(pc) {
-              font-size: 44px;
+              font-size: 38px;
             }
           }
           .en {
@@ -264,7 +263,7 @@
               font-size: 35px;
             }
             @include media(pc) {
-              font-size: 39px;
+              font-size: 37px;
             }
             strong {
               @include media(sp) {
@@ -281,7 +280,7 @@
         }
         .concept-copy__text {
           margin-top: 2em;
-          font-size: 18px;
+          font-size: 16px;
           line-height: 2.1;
           letter-spacing: .02em;
           text-align: justify;
@@ -301,7 +300,7 @@
         }
         @include media(pc) {
           margin: 20px 0 0 80px;
-          max-width: 523px;
+          max-width: 50%;
         }
         img {
           position: relative;
@@ -457,7 +456,7 @@
         background-color: rgba(255, 255, 255, .72);
       }
       @include media(pc) {
-        height: 578px;
+        height: 600px;
         &:after {
           content: '';
           display: block;
@@ -522,6 +521,11 @@
                 @include media(sp) {
                   font-size: .18rem;
                 }
+              }
+              .lead {
+                font-size: 14px;
+                line-height: 1.6;
+                margin-top: 15px;
               }
               .text {
                 margin: 15px 0;
@@ -1216,7 +1220,7 @@
       display: block;
       margin: 0 auto;
       @include media(pc) {
-        width: 1000px;
+        width: 700px;
       }
       @media screen and (max-width: 1240px) {
         width: 100%;
@@ -1355,7 +1359,7 @@
     max-width: 1230px;
     margin: 0 auto;
     padding: 0 20px;
-    @include media(st) {
+    @include media(tb) {
       width: 90%;
     }
     .project-lists {
@@ -1372,7 +1376,12 @@
       .project-lists__items {
         width: 30%;
         margin-bottom: 50px;
-        transition: .24s ease all;
+        animation-duration: 0.8s;
+        animation-name: animated;
+        animation-iteration-count:1;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        
         @include media(sp) {
           width: 48%;
           margin-bottom: .5rem;
@@ -1393,22 +1402,34 @@
           }
         }
         .text {
+          display: flex;
+          align-items: center;
           margin: 15px 0;
           font-size: 15px;
           @include media(sp) {
-            font-size: .2rem;
+            flex-wrap: wrap;
+            flex-direction: row;
+            font-size: .18rem;            
+            line-height: 1;
           }
           span {
-            margin-right: 10px;
+            width: 60px;
+            height: 20px;
+            margin-right: 15px;
             padding: 5px 10px;
             border-radius: 10px;
-            font-size: 13px;
+            font-size: 12px;
             color: $color-red;
+            text-align: center;
+            white-space: nowrap;
             background: #dbdbdb;
             @include media(sp) {
-              font-size: .2rem;
-              padding: .1rem .1rem;
-              border-radius: 5px;
+              font-size: .15rem;
+              margin-right: .18rem;
+              width: 40px;
+              padding: 5px 0;
+              height: auto;
+              border-radius: 10px;
             }
           }
         }
@@ -1442,6 +1463,11 @@
         width: 30%;
         margin-bottom: 50px;
         transition: .24s ease all;
+        animation-duration: 0.8s;
+        animation-name: animated;
+        animation-iteration-count:1;
+        animation-fill-mode: forwards;
+        opacity: 0;
         @include media(sp) {
           width: 48%;
           margin-bottom: .5rem;
@@ -1452,11 +1478,12 @@
       }
     }
     .projectDetail_details {
-      max-width: 300px;
+      max-width: 800px;
       margin: 0 auto;
       border-top: 2px solid #dbdbdb;
       margin-top: 30px;
-      .text {
+      .projectDetail-details__text {
+        margin-top: 30px;
         font-size: 14px;
         line-height: 2;
       }
@@ -1878,11 +1905,11 @@
     }
   }
   .map {
-    max-width: 1230px;
+    max-width: 1000px;
     padding: 140px 0;
     margin: -158px auto;
     @include  media(sp) {
-      width: 90%;
+      display: none;
     }
     .map__title {
       margin-bottom: 50px;
@@ -1924,7 +1951,7 @@
         background: #eee;
       }
       .consul-block__heading {
-        padding: 140px 0;
+        padding: 80px 0;
         line-height: 1.4;
         color: #fff;
         font-size: 28px;
@@ -1985,8 +2012,9 @@
         > div {
           display: flex;
           justify-content: space-between;
-          align-items: center;
+          align-items: flex-end;
           position: relative;
+          
           &.case2 {
             flex-direction: row-reverse;
             .list {
@@ -2007,14 +2035,14 @@
             flex-wrap: wrap;
           }
           .pic {
-            width: 25%;
+            width: 17%;
             @include media(sp) {
               display: none;
             }
           }
           .list {
             position: relative;
-            width: 70%;
+            width: 75%;
             padding: 50px;
             background: #eee;
             border-radius: 20px;
@@ -2077,9 +2105,9 @@
         width: 96%;
       }
       .consul-underBlock__text {
-        margin: 60px 0;
+        margin: 40px 0;
         text-align: center;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: bold;;
         color: $color-red;
         line-height: 2;

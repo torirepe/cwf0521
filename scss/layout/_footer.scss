@@ -155,9 +155,45 @@
     line-height: 2.2;
     letter-spacing: .2em;
     color: $color-gray-dark;
+    a {
+      display: inline-block;
+    }
     @include media(sp) {
       margin-top: .26rem;
       font-size: .14rem;
+    }
+  }
+}
+#pageTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  @include media(sp) {
+    bottom: 5%;
+    right: 5%;
+  }
+  a {
+    height: 60px;
+    width: 60px;
+    border: 1px solid $color-red;
+    border-radius: 50%;
+    position: relative;
+    i {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin: 24px 19px;
+      transform: rotate(315deg);
+      border-top: 1px solid $color-red;
+      border-right: 1px solid $color-red;
+    }
+    @include media(pc) {
+      &:hover {
+        background: $color-red;
+        i {
+          border-color: #fff;
+        }
+      }
     }
   }
 }
